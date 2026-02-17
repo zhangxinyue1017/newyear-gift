@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>给刘子晗小朋友的新年礼物｜新年小礼物</title>
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#140a1b;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --accent: #ff7bd5;
+      --accent2:#7be7ff;
+      --good:#7CFFB2;
+      --warn:#FFD37B;
+      --bad:#FF7B7B;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --r: 20px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",PingFang SC,Helvetica,Arial,"Hiragino Sans GB","Microsoft YaHei",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 20%, rgba(255,123,213,.25), transparent 60%),
+        radial-gradient(900px 500px at 80% 35%, rgba(123,231,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 40% 90%, rgba(124,255,178,.12), transparent 60%),
+        linear-gradient(135deg,var(--bg1),var(--bg2));
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:28px 18px 80px;
+      position:relative;
+    }
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .badge{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 14px;
+      border-radius:999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      font-size:14px;
+      color:var(--muted);
+      user-select:none;
+      white-space:nowrap;
+    }
+    .badge b{color:var(--text)}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:16px;
+      margin-top:14px;
+    }
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column; align-items:flex-start}
+    }
+    .card{
+      background: var(--card);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius: var(--r);
+      padding:18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(500px 280px at 20% 0%, rgba(255,123,213,.22), transparent 55%),
+                  radial-gradient(420px 260px at 90% 35%, rgba(123,231,255,.18), transparent 60%);
+      pointer-events:none;
+      opacity:.7;
+    }
+    .card > *{position:relative}
+    h1{
+      margin:0 0 8px 0;
+      font-size:30px;
+      line-height:1.25;
+      letter-spacing:.3px;
+    }
+    .sub{
+      color:var(--muted);
+      line-height:1.6;
+      font-size:15px;
+      margin:0 0 14px 0;
+    }
+    .poem{
+      margin:14px 0 10px;
+      padding:14px 14px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .poem .line{
+      font-size:18px;
+      letter-spacing:.6px;
+    }
+    .poem .meta{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .pillRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .pill{
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.14);
+      color: var(--text);
+      font-size:13px;
+      user-select:none;
+    }
+    .pill .k{color:var(--muted); margin-right:6px}
+    .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    button, .btn{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      padding:11px 14px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255,123,213,.95), rgba(123,231,255,.85));
+      color:#0b1020;
+      font-weight:700;
+      box-shadow: 0 14px 30px rgba(0,0,0,.35);
+      transition: transform .08s ease, filter .12s ease;
+      font-size:14px;
+    }
+    button:hover, .btn:hover{filter:brightness(1.05)}
+    button:active, .btn:active{transform: translateY(1px) scale(.99)}
+    .ghost{
+      background: rgba(255,255,255,.10);
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow:none;
+    }
+    .ghost:hover{filter:brightness(1.08)}
+    .count{
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    .cell{
+      padding:12px 10px;
+      border-radius: 16px;
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.12);
+      text-align:center;
+    }
+    .cell .n{
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:.4px;
+    }
+    .cell .t{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:4px;
+    }
+    .miniTitle{
+      font-size:14px;
+      color:var(--muted);
+      margin:2px 0 10px;
+    }
+    .inputRow{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    input{
+      flex: 1 1 220px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      outline:none;
+      font-size:14px;
+    }
+    input::placeholder{color: rgba(255,255,255,.45)}
+    .hint{
+      color: var(--muted);
+      font-size:12px;
+      margin-top:8px;
+      line-height:1.5;
+    }
+    .hiddenBox{
+      margin-top:14px;
+      padding:14px 14px;
+      border-radius: 16px;
+      background: rgba(124,255,178,.10);
+      border:1px solid rgba(124,255,178,.26);
+      display:none;
+    }
+    .hiddenBox.show{display:block}
+    .hiddenBox .h{
+      font-weight:800;
+      margin-bottom:6px;
+      color: rgba(255,255,255,.95);
+    }
+    .hiddenBox .p{
+      color: rgba(255,255,255,.84);
+      line-height:1.7;
+      font-size:14px;
+      margin:0;
+    }
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:22px;
+      transform: translateX(-50%);
+      padding:10px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,255,255,.18);
+      color: var(--text);
+      font-size:13px;
+      display:none;
+      z-index:9999;
+      backdrop-filter: blur(10px);
+    }
+    .toast.show{display:block}
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(2,1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (max-width:520px){ .gallery{grid-template-columns:1fr} }
+    .ph{
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.2);
+      aspect-ratio: 4/3;
+      position:relative;
+    }
+    .ph img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.05) contrast(1.02);
+      transform: scale(1.02);
+    }
+    .ph.active{
+    outline: 2px solid rgba(255,123,213,.8);
+    box-shadow: 0 18px 60px rgba(0,0,0,.45);
+    transform: translateY(-2px) scale(1.02);
+    }
+
+    .ph{
+    transition: transform .25s ease, box-shadow .25s ease, outline .25s ease;
+    }
+
+    .cap{
+      position:absolute;
+      left:10px;
+      right:10px;
+      bottom:10px;
+      padding:8px 10px;
+      border-radius:12px;
+      background: rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.88);
+      font-size:12px;
+      line-height:1.35;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Canvas for confetti */
+    #fx{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:9998;
+    }
+    footer{
+      margin-top:18px;
+      color: rgba(255,255,255,.55);
+      font-size:12px;
+      text-align:center;
+    }
+    .tiny{
+      font-size:12px;
+      color: rgba(255,255,255,.62);
+    }
+    a{color: rgba(123,231,255,.9)}
+    .hr{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin:12px 0;
+    }
+    .kpi{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .kpi .tag{
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.14);
+      font-size:12px;
+      color: rgba(255,255,255,.85);
+    }
+    .kpi .tag b{color:#fff}
+
+    /* ====== Mini couple animation ====== */
+    .miniCouple{
+    position: relative;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    gap:24px;
+    margin: 6px 0 12px;
+    padding: 10px 0 4px;
+    opacity: .92;
+    }
+
+    .dude{
+    width:72px;
+    height:90px;
+    position:relative;
+    transform-origin: 50% 100%;
+    animation: bob 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 14px 18px rgba(0,0,0,.35));
+    }
+    .dude.right{ animation-delay: .2s; }
+    @keyframes bob{
+    0%,100%{ transform: translateY(0) rotate(-1deg); }
+    50%{ transform: translateY(-4px) rotate(1deg); }
+    }
+
+    .dude .head{
+    width:38px; height:38px;
+    border-radius: 999px;
+    position:absolute;
+    left:50%; top:0;
+    transform: translateX(-50%);
+    background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.85), rgba(255,255,255,.35));
+    border: 1px solid rgba(255,255,255,.18);
+    box-shadow: 0 10px 24px rgba(0,0,0,.25);
+    }
+    .dude .body{
+    width:44px; height:44px;
+    border-radius: 18px;
+    position:absolute;
+    left:50%; top:34px;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.18);
+    backdrop-filter: blur(8px);
+    }
+
+    /* arms */
+    .dude .arm{
+    width:28px; height:10px;
+    border-radius: 999px;
+    position:absolute;
+    top:48px;
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.16);
+    transform-origin: 10% 50%;
+    }
+    .dude.left .arm.a1{ left:8px; transform: rotate(22deg); }
+    .dude.left .arm.a2{ right:6px; transform: rotate(-18deg); animation: wave 1.4s ease-in-out infinite; }
+    .dude.right .arm.a1{ left:6px; transform: rotate(18deg); animation: wave2 1.4s ease-in-out infinite; }
+    .dude.right .arm.a2{ right:8px; transform: rotate(-22deg); }
+
+    @keyframes wave{
+    0%,100%{ transform: rotate(-18deg); }
+    50%{ transform: rotate(-38deg); }
+    }
+    @keyframes wave2{
+    0%,100%{ transform: rotate(18deg); }
+    50%{ transform: rotate(38deg); }
+    }
+
+    /* legs */
+    .dude .leg{
+    width:12px; height:22px;
+    border-radius: 999px;
+    position:absolute;
+    top:74px;
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.16);
+    }
+    .dude .leg.l1{ left:26px; transform: rotate(8deg); }
+    .dude .leg.l2{ right:26px; transform: rotate(-8deg); }
+
+    /* hearts floating */
+    .hearts{
+    position:absolute;
+    left:50%;
+    top:-6px;
+    transform: translateX(-50%);
+    pointer-events:none;
+    }
+    .hearts span{
+    position:absolute;
+    left:0;
+    top:0;
+    font-size:16px;
+    color: rgba(255,123,213,.95);
+    text-shadow: 0 10px 18px rgba(0,0,0,.35);
+    opacity:0;
+    animation: floatUp 1.8s ease-in-out infinite;
+    }
+    .hearts span:nth-child(1){ left:-22px; animation-delay: .0s; }
+    .hearts span:nth-child(2){ left:  0px; animation-delay: .6s; color: rgba(123,231,255,.95); }
+    .hearts span:nth-child(3){ left: 22px; animation-delay: 1.2s; }
+
+    @keyframes floatUp{
+    0%{ transform: translateY(18px) scale(.9); opacity:0; }
+    20%{ opacity:.95; }
+    100%{ transform: translateY(-26px) scale(1.12); opacity:0; }
+    }
+    
+
+  </style>
+</head>
+
+<body>
+<canvas id="fx"></canvas>
+
+<div class="wrap">
+  <header>
+    <div class="badge">🎇 <b>马年限定版</b> · 可点击互动 · 暗号解锁</div>
+    <div class="badge">暗号：<b>立春</b></div>
+  </header>
+
+  <div class="grid">
+    <section class="card">
+      <h1>霏晗升迁，唯有月光</h1>
+      <p class="sub">
+        写一个属于我们的小网页<br/>
+        来记录这陪我走过的十年，也期待我们的未来
+      </p>
+
+      <div class="poem">
+        <div class="line">「霏晗升迁，唯有月光」</div>
+        <div class="meta">纪念日：2.4 </div>
+      </div>
+
+      <div class="pillRow">
+        <div class="pill"><span class="k">目标</span>马年我们万事顺利，心想事成！</div>
+        <div class="pill"><span class="k">计划</span>好好在一起，一起成为更好的自己</div>
+        <div class="pill"><span class="k">挑战</span>让爱生长在时差之上</div>
+        <div class="pill"><span class="k">结论</span>我爱你💗</div>
+      </div>
+
+      <div class="ctaRow">
+        <button id="boomBtn">点我放烟花(此烟花非彼yanhua...)</button>
+        <button class="ghost" id="loveBtn">点我查看“官方认证”</button>
+      </div>
+
+      <div class="hiddenBox" id="certBox">
+        <div class="h">✅ 官方认证</div>
+        <p class="p">
+          你是我十年才写对的答案<br/>
+          接下来，慢慢写过程<br/>
+          </p>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="hr"></div>
+
+      <div class="miniTitle">输入暗号解锁隐藏内容：</div>
+      <div class="inputRow">
+        <input id="code" placeholder="输入暗号" />
+        <button class="ghost" id="unlockBtn">解锁</button>
+      </div>
+      <div class="hint">提示：就是我们纪念日</div>
+
+      <div class="hiddenBox" id="secretBox">
+        <div class="h">🎁 恋爱协议书 </div>
+        <p class="p">
+          1) 马年我们都顺顺利利：你工作顺利升职加薪，我也学业有成继续进步<br/>
+          2) 争吵允许发生，但不允许冷暴力；不开心一定要说出来！<br/>
+          3) 最重要的一条：我们要好好在一起，成为更好的自己<br/><br/>
+          <b>the most important thing is I love you </b>
+        </p>
+
+        <div class="kpi">
+          <div class="tag">合伙期限：<b>永久</b></div>
+          <div class="tag">违约成本：<b>想你</b></div>
+          <div class="tag">奖励机制：<b>亲亲抱抱</b></div>
+          <div class="tag">续约方式：<b>每天说爱你</b></div>
+        </div>
+
+        <div style="margin-top:12px">
+          <button id="playVoiceBtn">播放语音</button>
+          <audio id="voice" preload="auto">
+            <source src="voice.mp3" type="audio/mpeg"/>
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h2 style="margin:0 0 6px 0; font-size:18px;">📷 我们的照片墙</h2>
+
+      <div class="miniCouple" aria-hidden="true">
+        <div class="dude left">
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="arm a1"></div>
+            <div class="arm a2"></div>
+            <div class="leg l1"></div>
+            <div class="leg l2"></div>
+        </div>
+
+        <div class="hearts">
+            <span>❤</span><span>❤</span><span>❤</span>
+        </div>
+
+        <div class="dude right">
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="arm a1"></div>
+            <div class="arm a2"></div>
+            <div class="leg l1"></div>
+            <div class="leg l2"></div>
+        </div>
+    </div>
+
+      <div class="gallery" id="gallery"></div>
+
+      <div class="hr"></div>
+
+
+      <footer>
+        Made with ♥ · 月 × 晗 
+      </footer>
+    </aside>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // ====== Toast ======
+  const toast = (msg) => {
+    const el = document.getElementById("toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(window.__t);
+    window.__t = setTimeout(()=>el.classList.remove("show"), 1800);
+  };
+
+
+  // ====== Confetti / Fireworks (simple) ======
+  const canvas = document.getElementById("fx");
+  const ctx = canvas.getContext("2d");
+  function resize(){
+    canvas.width = window.innerWidth * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+    ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  const particles = [];
+  function rand(a,b){return a + Math.random()*(b-a);}
+  function burst(x,y){
+    const n = 120;
+    for(let i=0;i<n;i++){
+      const ang = rand(0, Math.PI*2);
+      const spd = rand(1.2, 5.5);
+      particles.push({
+        x,y,
+        vx: Math.cos(ang)*spd,
+        vy: Math.sin(ang)*spd,
+        g: rand(0.02,0.06),
+        life: rand(50,110),
+        r: rand(1.2,3.4),
+        hue: rand(0,360),
+        a: 1
+      });
+    }
+  }
+  function loop(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(let i=particles.length-1;i>=0;i--){
+      const p = particles[i];
+      p.vy += p.g*16;
+      p.x += p.vx*2;
+      p.y += p.vy*2;
+      p.life -= 1;
+      p.a = Math.max(0, p.life/110);
+
+      ctx.beginPath();
+      ctx.fillStyle = `hsla(${p.hue}, 95%, 70%, ${p.a})`;
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fill();
+
+      if(p.life<=0) particles.splice(i,1);
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+  document.getElementById("boomBtn").addEventListener("click", ()=>{
+    burst(rand(80, window.innerWidth-80), rand(120, window.innerHeight*0.55));
+    toast("🎇 烟花已发射：请收下我的想念");
+  });
+
+  // Click anywhere for small burst
+  document.addEventListener("click",(e)=>{
+    if(e.target.tagName==="BUTTON" || e.target.tagName==="INPUT") return;
+    burst(e.clientX, e.clientY);
+  });
+
+
+
+  // ====== Official cert ======
+  document.getElementById("loveBtn").addEventListener("click", ()=>{
+    const box = document.getElementById("certBox");
+    box.classList.toggle("show");
+    burst(rand(120, window.innerWidth-120), rand(120, window.innerHeight*0.5));
+  });
+
+  // ====== Unlock code ======
+  const codeEl = document.getElementById("code");
+  const secretBox = document.getElementById("secretBox");
+
+  function normalize(s){
+    return (s||"")
+      .toLowerCase()
+      .replace(/\s/g,"")
+      .replace(/[.\-_/年月日]/g,"")
+      .replace(/^0+/,""); // trim leading zeros lightly
+  }
+  function checkCode(){
+    const v = normalize(codeEl.value);
+    // Accept: 0204 / 204 / 2.4 / 02-04 / 2/4 etc
+    const ok = (v === "204" || v === "0204".replace(/^0+/,"") || v === "24");
+    if(ok){
+      secretBox.classList.add("show");
+      burst(window.innerWidth*0.5, window.innerHeight*0.32);
+      toast("解锁成功：十年合伙人上线");
+    }else{
+      toast("暗号不对 😼 提示：纪念日 2.4");
+    }
+  }
+  document.getElementById("unlockBtn").addEventListener("click", checkCode);
+  codeEl.addEventListener("keydown",(e)=>{ if(e.key==="Enter") checkCode(); });
+
+  // ====== Voice ======
+  const voice = document.getElementById("voice");
+  document.getElementById("playVoiceBtn").addEventListener("click", async ()=>{
+    try{
+      await voice.play();
+      toast("🎧 语音播放中");
+    }catch(err){
+      toast("没找到 voice.mp3 或浏览器阻止自动播放");
+    }
+  });
+
+  document.querySelector(".miniCouple")?.addEventListener("click", (e)=>{
+  burst(e.clientX, e.clientY);
+  toast("💗 牵手成功");
+});
+
+
+// ====== Gallery loader ======
+    const manualPhotos = [
+    // "photos/a.jpg",
+    // "photos/b.jpg",
+    ];
+    const gallery = document.getElementById("gallery");
+
+    function addPhoto(src, caption){
+    const d = document.createElement("div");
+    d.className = "ph";
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = caption || "photo";
+    img.onerror = ()=>{ d.remove(); };
+    d.appendChild(img);
+
+    gallery.appendChild(d);
+    }
+
+    function loadPhotos(){
+    if(manualPhotos.length){
+        manualPhotos.forEach((src)=>addPhoto(src, ""));
+        return;
+    }
+    const MAX_PHOTOS = 60; // 你想多放就改这里：60/120/200
+    for(let i=1;i<=MAX_PHOTOS;i++){
+        addPhoto(`photos/photo${i}.jpg`, "");
+    }
+    }
+    loadPhotos();
+
+  // ====== Gallery autoplay focus ======
+    let idx = 0;
+    function autoplayFocus(){
+    const items = Array.from(document.querySelectorAll("#gallery .ph"));
+    if(items.length === 0) return;
+
+    // 清除旧高亮
+    items.forEach(x => x.classList.remove("active"));
+
+    // 高亮当前
+    items[idx % items.length].classList.add("active");
+
+    // 自动滚动到可视区域（更像“播放”）
+    items[idx % items.length].scrollIntoView({behavior:"smooth", block:"nearest", inline:"nearest"});
+
+    idx += 1;
+    }
+    setInterval(autoplayFocus, 2500);
+    setTimeout(autoplayFocus, 800);
+
+
+</script>
+</body>
+</html>
